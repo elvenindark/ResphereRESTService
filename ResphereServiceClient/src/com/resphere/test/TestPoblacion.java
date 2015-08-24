@@ -17,7 +17,7 @@ public class TestPoblacion {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String id = "1408044188";
+		String id = "1436895095";
 		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.poblacion";
 		//testPoblacionAllJson(url);
 		testPoblacionAllById(id, url);
@@ -39,7 +39,7 @@ public class TestPoblacion {
 		PoblacionFacadeREST servicio = new PoblacionFacadeREST(Poblacion.class, url);
 		List<Poblacion> lista = servicio.getAllById(id);
 		for(int i = 0; i < lista.size(); i++){
-			System.out.println(lista.get(i));
+			System.out.println(lista.get(i).getIdevento() + " " +lista.get(i).getNumero());
 		}
 	}
 }

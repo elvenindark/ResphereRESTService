@@ -12,7 +12,7 @@ public class TestEventosv {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.eventosv";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.eventosv";
 		testEventosvAll(url);
 	}
 
@@ -21,7 +21,7 @@ public class TestEventosv {
 		List<Eventosv> list = service.getAll();
 		if(list!=null)
 			for(int i = 0; i <list.size(); i++)
-				System.out.println(list.get(i).getIdevento() + " " + list.get(i).getEvento());
+				System.out.println(list.get(i).getParroquia() + " " + list.get(i).getEvento());
 		else
 			System.out.println("servicio stop");
 	}
