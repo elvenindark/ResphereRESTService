@@ -7,8 +7,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.json.JSONException;
 
 
-
-import com.resphere.model.Respuestahumanitaria;
+import com.resphere.server.model.Respuestahumanitaria;
 import com.resphere.service.RespuestahumanitariaFacadeREST;
 
 public class TestRHumanitaria {
@@ -18,23 +17,22 @@ public class TestRHumanitaria {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String id = "1395407422";
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
+		String id = "1438885596";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
 		Respuestahumanitaria respuesta = new Respuestahumanitaria();		
 		respuesta.setIdevento(id);
 		respuesta.setIdindicadorclave("2");		
 		respuesta.setAplica("on");
 		respuesta.setObservacion("no hay observaciones");		
-		//TestRHumanitariaPost(respuesta, url);
+		TestRHumanitariaPost(respuesta, url);
 		//TestRHumanitariaGet(url, id);
-		TestRHumanitariaGetAll(url);
+		//TestRHumanitariaGetAll(url);
 	}
 
 	public static void TestRHumanitariaPost(Respuestahumanitaria respuesta, String url){
 		RespuestahumanitariaFacadeREST servicio = new RespuestahumanitariaFacadeREST(Respuestahumanitaria.class, url);
 		try {
-			servicio.post(respuesta);
-			System.out.println("correcto");
+			servicio.post(respuesta);			
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

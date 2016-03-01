@@ -18,4 +18,8 @@ public class RespuestabysectorvFacadeREST extends AbstractFacade<Respuestabysect
 	public List<Respuestabysectorv> getAllByIds(String idevento, String idsector) throws ClientProtocolException, IOException{
 		return super.getAllByIds(idevento, idsector);
 	}
+	
+	public List<Respuestabysectorv> getAllById(String idevento)throws ClientProtocolException, IOException{
+		return super.getAllById(idevento);
+	}
 }

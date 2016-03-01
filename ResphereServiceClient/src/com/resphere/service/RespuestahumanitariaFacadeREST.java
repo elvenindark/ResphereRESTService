@@ -6,8 +6,7 @@ import java.util.List;
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONException;
 
-import com.resphere.model.Respuestahumanitaria;
-
+import com.resphere.server.model.Respuestahumanitaria;
 
 public class RespuestahumanitariaFacadeREST extends
 		AbstractFacade<Respuestahumanitaria> {

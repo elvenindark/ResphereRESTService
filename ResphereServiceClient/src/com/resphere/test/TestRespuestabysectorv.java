@@ -16,9 +16,12 @@ public class TestRespuestabysectorv {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.respuestabysectorv";
-		String idevento = "1395407422";
+		String idevento = "1438885596";
+		String idevento1 = "1447768774";
 		String idsector = "1";
-		testGetRespuestabysectorvByIds(url, idevento, idsector);
+		//testGetRespuestabysectorvByIds(url, idevento, idsector);
+		testGetRespuestabysectorvById(url, idevento1);
+		
 	}
 	
 	public static void testGetRespuestabysectorvByIds(String url, String idevento, String idsector){
@@ -28,7 +31,25 @@ public class TestRespuestabysectorv {
 				List<Respuestabysectorv> lista = servicio.getAllByIds(idevento, idsector);
 				if(lista!=null)
 					for(Respuestabysectorv item:lista)
-						System.out.println(item.getIdevento()+";"+item.getIdindicadorclave()+";"+item.getObservacion());
+						System.out.println(item.getIdevento()+";"+item.getIndicadorclave()+";"+item.getObservacion());
+			} catch (ClientProtocolException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void testGetRespuestabysectorvById(String url, String idevento){
+		RespuestabysectorvFacadeREST servicio = new RespuestabysectorvFacadeREST(Respuestabysectorv.class, url);
+		if(servicio!=null){
+			try {
+				List<Respuestabysectorv> lista = servicio.getAllById(idevento);
+				if(lista!=null)
+					for(Respuestabysectorv item:lista)
+						System.out.println(item.getIdevento()+";"+item.getIndicadorclave()+";"+item.getObservacion());
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
