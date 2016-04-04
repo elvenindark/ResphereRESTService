@@ -199,7 +199,7 @@ public abstract class AbstractFacade<T> {
 		return httpPost;
 	}	
     
-    public HttpPost setPostList(List<T> list) throws UnsupportedCharsetException, JSONException{
+    public HttpPost setPostList(List<T> list) throws UnsupportedCharsetException, JSONException, UnsupportedEncodingException{
     	HttpPost httpPost = new HttpPost(URL_Base+"/list");
     	StringEntity entity = new StringEntity(serializeList(list).toString(), HTTP.UTF_8);
     	entity.setContentType("application/json");

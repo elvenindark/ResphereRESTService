@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
 
 import com.resphere.server.model.Indicadorclave;
 
@@ -12,6 +13,16 @@ public class IClaveFacadeREST extends AbstractFacade<Indicadorclave> {
 	public IClaveFacadeREST(Class<Indicadorclave> entityClass, String url) {
 		super(entityClass, url);
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Indicadorclave get(String id){
+		try {
+			return super.get(id);
+		} catch (IOException | JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public List<Indicadorclave> getAll(){

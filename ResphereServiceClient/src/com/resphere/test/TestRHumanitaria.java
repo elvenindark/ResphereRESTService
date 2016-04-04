@@ -21,7 +21,7 @@ public class TestRHumanitaria {
 		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
 		Respuestahumanitaria respuesta = new Respuestahumanitaria();		
 		respuesta.setIdevento(id);
-		respuesta.setIdindicadorclave("2");		
+		respuesta.setIdindicadorclave("1");		
 		respuesta.setAplica("on");
 		respuesta.setObservacion("no hay observaciones");		
 		TestRHumanitariaPost(respuesta, url);

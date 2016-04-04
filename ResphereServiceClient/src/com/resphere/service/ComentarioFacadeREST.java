@@ -4,28 +4,17 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
-import org.json.JSONException;
 
-import com.resphere.server.model.Normaminima;
+import com.resphere.server.model.Comentario;
 
-public class NMinimaFacadeREST extends AbstractFacade<Normaminima> {
+public class ComentarioFacadeREST extends AbstractFacade<Comentario> {
 
-	public NMinimaFacadeREST(Class<Normaminima> entityClass, String url) {
+	public ComentarioFacadeREST(Class<Comentario> entityClass, String url) {
 		super(entityClass, url);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Normaminima get(String id){
-		try {
-			return super.get(id);
-		} catch (IOException | JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	public List<Normaminima> getAll(){
+	public List<Comentario> getAll(){
 		try {
 			return super.getAll();
 		} catch (ClientProtocolException e) {
@@ -38,9 +27,9 @@ public class NMinimaFacadeREST extends AbstractFacade<Normaminima> {
 		return null;
 	}
 	
-	public List<Normaminima> getAllByIdSH(String id){
+	public List<Comentario> getAllById(String id){
 		try {
-			return super.getQueryById("shumanitario", id);
+			return super.getAllById(id);
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,5 +39,6 @@ public class NMinimaFacadeREST extends AbstractFacade<Normaminima> {
 		}
 		return null;
 	}
+
 
 }

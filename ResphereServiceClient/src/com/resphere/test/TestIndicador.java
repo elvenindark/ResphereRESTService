@@ -16,12 +16,21 @@ public class TestIndicador {
 	 * @param args
 	 */
 	public static void main(String[] args) throws ClientProtocolException, IOException, JSONException{
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.indicadorclave";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.indicadorclave";
+		String id = "4";
 		/*testIndicadorAllJson(url);
 		List<Indicadorclave> lista = testIndicadorGetAll(url);
 		for(int i = 0; i < lista.size(); i++)
 			System.out.println(lista.get(i).getIdindicadorclave() + " : " + lista.get(i).getIndicadorclave());*/
-		getAllByQuery(url, "2");
+		//getAllByQuery(url, "2");
+		get(id, url);
+		
+	}
+	
+	public static void get(String id, String url){
+		IClaveFacadeREST service = new IClaveFacadeREST(Indicadorclave.class, url);
+		Indicadorclave indicador = service.get(id);
+		System.out.println("descripcion> \n" + indicador.getIndicadorclave());
 	}
 	
 	public static void getAllByQuery(String url, String id){

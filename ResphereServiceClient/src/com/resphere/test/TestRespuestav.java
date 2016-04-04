@@ -15,7 +15,7 @@ public class TestRespuestav {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.respuestav";
+		String url = "http://172.30.36.184:8080/respherers/webresources/com.resphere.server.model.respuestav";
 		testGetRespuestavAll(url);
 	}
 
